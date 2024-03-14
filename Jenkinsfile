@@ -9,7 +9,6 @@ pipeline {
         // }
         stage('Install Dependencies') {
             steps {
-                cd Nodejs-hello-world
                 echo "Executing npm install ..."
                 nodejs('Node-21.5.0') {
                     sh 'npm install'
@@ -19,7 +18,6 @@ pipeline {
 
         stage('Perform API Testing') {
             steps {
-                cd Nodejs-hello-world
                 echo "Executing npm test ..."
                 nodejs('Node-21.5.0') {
                     sh 'npm run test'
@@ -34,7 +32,6 @@ pipeline {
                 submitter "pankaj"
             }
             steps {
-                cd Nodejs-hello-world
                 nodejs('Node-21.5.0') {
                     sh 'npm start'
                 }
